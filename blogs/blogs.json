@@ -1,0 +1,105 @@
+{
+  "provider": "reviewtrackers",
+  "blogURL": "https://www.reviewtrackers.com/blog/",
+  "fetched": "2026-06-13",
+  "posts": [
+    {
+      "title": "Automotive Reputation Management: Winning with Digital Strategies",
+      "url": "https://www.reviewtrackers.com/blog/improve-automotive-reputation-management/",
+      "author": "Mike Henry",
+      "categories": ["Reputation Management", "Digital Transformation"],
+      "description": "Covers digital strategies for managing automotive industry reputation."
+    },
+    {
+      "title": "How Customer Experience Analysis Improves Customer Retention and Drives Business Growth",
+      "url": "https://www.reviewtrackers.com/blog/reviewtrackers-experience-analytics/",
+      "author": "Alyssa Shaoul",
+      "categories": ["Digital Transformation", "Product Updates"],
+      "description": "Explores how experience analytics enhances retention and business outcomes."
+    },
+    {
+      "title": "Getting Started Guide: Managing Your Online Reputation",
+      "url": "https://www.reviewtrackers.com/blog/managing-your-online-reputation/",
+      "author": "Migs Bassig",
+      "categories": ["Customer Acquisition", "Customer Retention", "Reputation Management", "Review Monitoring"],
+      "description": "Introductory guide for managing online reputation."
+    },
+    {
+      "title": "Why Should You Manage and Analyze Your Review Data?",
+      "url": "https://www.reviewtrackers.com/blog/review-data/",
+      "author": "Migs Bassig",
+      "categories": ["Customer Experience", "Review Monitoring"],
+      "description": "Discusses importance of review data management and analysis."
+    },
+    {
+      "title": "Local Business Listings: Get Started and Get Found Online",
+      "url": "https://www.reviewtrackers.com/blog/local-business-listings/",
+      "author": "Migs Bassig",
+      "categories": ["Customer Acquisition", "Digital Transformation"],
+      "description": "Guide to establishing and optimizing local business listings."
+    },
+    {
+      "title": "Improve Local Business SEO with ReviewTrackers' Local Listings",
+      "url": "https://www.reviewtrackers.com/blog/improve-local-business-seo/",
+      "author": "Alyssa Shaoul",
+      "categories": ["Company Updates", "Product Updates"],
+      "description": "Explains how local listings enhance SEO performance."
+    },
+    {
+      "title": "How to Add Your Business to Apple Maps",
+      "url": "https://www.reviewtrackers.com/blog/add-business-apple-maps/",
+      "author": "Migs Bassig",
+      "categories": ["Customer Acquisition", "Reputation Management"],
+      "description": "Tutorial for adding business presence to Apple Maps."
+    },
+    {
+      "title": "An Introductory Guide to Net Promoter Scoring",
+      "url": "https://www.reviewtrackers.com/blog/net-promoter-scoring/",
+      "author": "Migs Bassig",
+      "categories": ["Customer Acquisition"],
+      "description": "Overview of NPS methodology and application."
+    },
+    {
+      "title": "ReviewTrackers Integrates with Apple Business Connect to Enhance Customers' Listings Accuracy and Consistency",
+      "url": "https://www.reviewtrackers.com/blog/apple-business-connect/",
+      "author": "Chelcea Fowler",
+      "categories": ["Product Updates", "Reputation Management"],
+      "description": "Details integration improving listing accuracy."
+    },
+    {
+      "title": "How to Increase Customer Lifetime Value in 5 Steps",
+      "url": "https://www.reviewtrackers.com/blog/how-to-increase-customer-lifetime-value/",
+      "author": "Migs Bassig",
+      "categories": ["Customer Experience", "Customer Retention"],
+      "description": "Practical steps for maximizing customer lifetime value."
+    },
+    {
+      "title": "Why Your Company Should Harness Unstructured Data",
+      "url": "https://www.reviewtrackers.com/blog/unstructured-data/",
+      "author": "Migs Bassig",
+      "categories": ["Customer Experience", "Customer Retention"],
+      "description": "Demonstrates value of leveraging unstructured data."
+    },
+    {
+      "title": "Customer Experience Analytics Tools Help Brands Deliver Improved Experiences",
+      "url": "https://www.reviewtrackers.com/blog/customer-experience-analytics-tools/",
+      "author": "Migs Bassig",
+      "categories": ["Customer Experience", "Customer Retention"],
+      "description": "Explores how analytics tools enhance customer experiences."
+    },
+    {
+      "title": "Different Types of Social Media Marketing for Growing Your Brand",
+      "url": "https://www.reviewtrackers.com/blog/types-of-social-media-marketing/",
+      "author": "Migs Bassig",
+      "categories": ["Customer Acquisition", "Digital Transformation"],
+      "description": "Overview of social media marketing approaches."
+    },
+    {
+      "title": "3 Reasons Why Your Company Should Use Customer Testimonials (With Examples)",
+      "url": "https://www.reviewtrackers.com/blog/customer-testimonials/",
+      "author": "Migs Bassig",
+      "categories": ["Customer Acquisition", "Customer Experience"],
+      "description": "Benefits and examples of customer testimonial usage."
+    }
+  ]
+}

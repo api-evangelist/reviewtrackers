@@ -1,0 +1,70 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "reviewtrackers": "https://www.reviewtrackers.com/vocab#",
+    "aid": "reviewtrackers:aid",
+    "name": "name",
+    "description": "description",
+    "url": "url",
+    "humanURL": "reviewtrackers:humanURL",
+    "baseURL": "reviewtrackers:baseURL",
+    "tags": "keywords",
+    "provider": {
+      "@id": "reviewtrackers:provider",
+      "@type": "@id"
+    },
+    "Review": "Review",
+    "ReviewTrackers": "reviewtrackers:ReviewTrackers",
+    "ReputationManagement": "reviewtrackers:ReputationManagement",
+    "ReviewMonitoring": "reviewtrackers:ReviewMonitoring",
+    "SentimentAnalytics": "reviewtrackers:SentimentAnalytics",
+    "CustomerFeedback": "reviewtrackers:CustomerFeedback",
+    "LocalSEO": "reviewtrackers:LocalSEO",
+    "OnlineReviews": "reviewtrackers:OnlineReviews",
+    "reviewSite": "reviewtrackers:reviewSite",
+    "sentimentScore": "reviewtrackers:sentimentScore",
+    "reviewResponse": "reviewtrackers:reviewResponse",
+    "reviewCampaign": "reviewtrackers:reviewCampaign",
+    "reviewData": "reviewtrackers:reviewData",
+    "businessListing": "reviewtrackers:businessListing",
+    "customerExperience": "reviewtrackers:customerExperience",
+    "netPromoterScore": "reviewtrackers:netPromoterScore",
+    "crmIntegration": "reviewtrackers:crmIntegration",
+    "posIntegration": "reviewtrackers:posIntegration",
+    "Organization": "Organization",
+    "SoftwareApplication": "SoftwareApplication",
+    "WebAPI": "reviewtrackers:WebAPI",
+    "BlogPosting": "BlogPosting",
+    "author": "author",
+    "datePublished": "datePublished",
+    "category": "about"
+  },
+  "@type": "SoftwareApplication",
+  "@id": "https://www.reviewtrackers.com",
+  "name": "ReviewTrackers",
+  "description": "ReviewTrackers is an online reputation management platform that enables businesses to monitor reviews across 100+ review sites, respond to customer feedback, generate new reviews, and track sentiment analytics.",
+  "url": "https://www.reviewtrackers.com",
+  "applicationCategory": "BusinessApplication",
+  "keywords": [
+    "Reputation Management",
+    "Review Monitoring",
+    "Customer Feedback",
+    "Sentiment Analytics",
+    "Local SEO",
+    "Online Reviews"
+  ],
+  "provider": {
+    "@type": "Organization",
+    "name": "ReviewTrackers",
+    "url": "https://www.reviewtrackers.com",
+    "sameAs": [
+      "https://twitter.com/reviewtrackers",
+      "https://www.linkedin.com/company/review-trackers",
+      "https://github.com/reviewtrackers"
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.reviewtrackers.com/pricing/"
+  }
+}
