@@ -1,0 +1,55 @@
+name: ReviewTrackers Plans and Pricing
+description: Pricing plans for ReviewTrackers online reputation management platform. Pricing is location-based (per location per month, billed annually) with a custom quote model. API access is included on higher tiers.
+url: https://www.reviewtrackers.com/pricing/
+plans:
+  - name: Data Only
+    description: Review data from 100+ sources combined with additional signals for analysis in your preferred platform. Your data, your way.
+    features:
+      - Review data from 100+ review sites
+      - SSO (Single Sign-On)
+      - API access
+      - Data export
+      - CRM and POS system integration
+    api_access: true
+
+  - name: Starter
+    description: Cover the basics. Unlimited users, alerts, dashboards, review and feedback requests, and review responding.
+    features:
+      - All Data Only features
+      - Review monitoring dashboard
+      - Email and SMS alerts
+      - Review solicitation campaigns
+      - AI-assisted review response
+      - Unlimited users per location
+      - Amplify widget
+    api_access: true
+
+  - name: Essential
+    description: Maximum insights. All Starter features plus experience analysis and competitor insights.
+    features:
+      - All Starter features
+      - Experience analysis
+      - Competitor insights
+      - Advanced sentiment analytics
+      - Keywords and trend tracking
+    api_access: true
+
+add_ons:
+  - name: Local Listings Management
+    description: Ensure consistent, up-to-date business listings across directories.
+  - name: Local Search Rank
+    description: Track local SEO ranking performance.
+  - name: Managed Services
+    description: Hands-on support from ReviewTrackers team for reputation management.
+  - name: White Label
+    description: Rebrand the platform for agency or reseller use.
+  - name: Employer Brand Package
+    description: Monitor and manage employee feedback and workplace engagement.
+  - name: App Store Package
+    description: Monitor and manage app store feedback across iOS and Android.
+
+notes:
+  - Pricing is not publicly listed; a custom quote is required based on number of locations.
+  - Starting price is approximately $69 per location per month (billed annually).
+  - Enterprise pricing available for 100+ location businesses.
+  - ReviewTrackers is owned by Press Ganey.

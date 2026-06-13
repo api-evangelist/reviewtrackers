@@ -1,0 +1,49 @@
+name: ReviewTrackers FinOps
+description: Financial operations considerations for teams integrating the ReviewTrackers API. Costs are location-based and scale with the number of business locations monitored. API access is bundled into subscription tiers rather than charged per-call.
+url: https://www.reviewtrackers.com/pricing/
+
+model: subscription
+billing_cycle: annual
+pricing_unit: per location per month
+
+cost_drivers:
+  - name: Number of Locations
+    description: Primary cost driver. Each business location monitored counts as one unit. Pricing scales with total locations.
+    impact: high
+
+  - name: Plan Tier
+    description: Data Only, Starter, and Essential tiers offer increasing functionality. Higher tiers include experience analysis, competitor insights, and advanced reporting.
+    impact: high
+
+  - name: Add-On Packages
+    description: Optional add-ons for local listings management, local search rank, managed services, white label, employer brand, and app store monitoring incur additional costs.
+    impact: medium
+
+  - name: API Usage
+    description: API access is bundled into subscription plans — there are no per-API-call charges. However, heavy API usage may trigger throttling at no additional cost.
+    impact: low
+
+cost_estimates:
+  - scenario: Single location SMB
+    monthly_estimate_usd: 69
+    notes: Base price for a single-location business on the Starter plan (billed annually).
+
+  - scenario: 10-location regional business
+    monthly_estimate_usd: 500_to_1000
+    notes: Estimated range for a mid-market business on the Essential plan.
+
+  - scenario: 100-location enterprise
+    monthly_estimate_usd: 5000_plus
+    notes: Large enterprise pricing; custom quote required. Includes volume discounts.
+
+optimization_tips:
+  - Audit active locations regularly and remove inactive or closed locations to reduce seat count.
+  - Negotiate annual contract pricing upfront for maximum discount on per-location fees.
+  - Evaluate which add-on packages are essential vs. nice-to-have before contract renewal.
+  - Use the Data Only plan for analytics-only integrations to reduce per-location costs.
+  - Leverage the Zapier integration for lightweight automation before investing in a direct API integration.
+
+notes:
+  - ReviewTrackers pricing is not publicly listed; contact sales for a custom quote.
+  - Owned by Press Ganey; enterprise procurement may route through Press Ganey contracts.
+  - No free tier or trial pricing is publicly advertised.

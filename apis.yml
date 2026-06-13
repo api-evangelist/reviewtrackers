@@ -1,0 +1,61 @@
+aid: reviewtrackers
+name: ReviewTrackers
+description: ReviewTrackers is an online reputation management platform that enables businesses to monitor reviews across 100+ review sites, respond to customer feedback, generate new reviews, and track sentiment analytics. The REST API allows organizations to download review data, sync with CRM and POS systems, automate review responses, and build custom applications on top of ReviewTrackers data.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/reviewtrackers/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Reputation Management
+  - Review Monitoring
+  - Customer Feedback
+  - Sentiment Analytics
+  - Local SEO
+  - Online Reviews
+
+apis:
+  - aid: reviewtrackers:reviewtrackers-api
+    name: ReviewTrackers API
+    description: REST API for the ReviewTrackers online reputation management platform. Provides access to review data from 100+ review sites, enables automated review responses, supports review solicitation campaigns, and delivers sentiment and experience analytics. Used to integrate ReviewTrackers data with CRMs, POS systems, and custom applications.
+    humanURL: https://www.reviewtrackers.com/blog/api-integrations/
+    baseURL: https://app.reviewtrackers.com
+    tags:
+      - Reviews
+      - Reputation Management
+      - Sentiment Analytics
+      - Customer Feedback
+    properties:
+      - type: Documentation
+        url: https://www.reviewtrackers.com/blog/api-integrations/
+      - type: StatusPage
+        url: https://status.reviewtrackers.com
+
+common:
+  - type: Website
+    url: https://www.reviewtrackers.com
+  - type: Documentation
+    url: https://www.reviewtrackers.com/blog/api-integrations/
+  - type: GitHubOrg
+    url: https://github.com/reviewtrackers
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/review-trackers
+  - type: Blog
+    url: https://www.reviewtrackers.com/blog/
+  - type: Pricing
+    url: https://www.reviewtrackers.com/pricing/
+  - type: StatusPage
+    url: https://status.reviewtrackers.com
+  - type: X
+    url: https://twitter.com/reviewtrackers
+  - type: Plans
+    url: plans/reviewtrackers-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/reviewtrackers-rate-limits.yml
+  - type: FinOps
+    url: finops/reviewtrackers-finops.yml
+
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

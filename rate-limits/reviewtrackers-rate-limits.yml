@@ -1,0 +1,29 @@
+name: ReviewTrackers API Rate Limits
+description: Rate limiting policies for the ReviewTrackers REST API. Limits apply per API key and are enforced server-side. ReviewTrackers reserves the right to throttle calls based on CPU time and total response time.
+url: https://www.reviewtrackers.com/blog/api-integrations/
+
+limits:
+  - endpoint: POST /auth
+    description: Authentication endpoint rate limit for unauthenticated requests.
+    requests_per_window: 10
+    window_seconds: 60
+    scope: unauthenticated
+
+  - endpoint: All authenticated endpoints
+    description: General rate limit for authenticated API requests.
+    requests_per_window: 25
+    window_seconds: 60
+    scope: authenticated
+
+pagination:
+  max_results_per_page: 100
+  description: The API supports a maximum of 100 results per page when requesting paginated data.
+
+throttling:
+  description: ReviewTrackers reserves the right to throttle API calls based on CPU time used and total time per request. Throttling is enforced at the API level and does not affect usage of ReviewTrackers client-facing applications.
+
+notes:
+  - Rate limits apply per API key / access token.
+  - Exceeding rate limits will result in HTTP 429 Too Many Requests responses.
+  - Contact ReviewTrackers support for elevated rate limits for enterprise integrations.
+  - Rate limit headers are returned in API responses to help clients manage their request pace.
