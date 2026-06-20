@@ -2,7 +2,7 @@ aid: reviewtrackers
 name: ReviewTrackers
 description: ReviewTrackers is an online reputation management platform that enables businesses to monitor reviews across 100+ review sites, respond to customer feedback, generate new reviews, and track sentiment analytics. The REST API allows organizations to download review data, sync with CRM and POS systems, automate review responses, and build custom applications on top of ReviewTrackers data.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/reviewtrackers/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
