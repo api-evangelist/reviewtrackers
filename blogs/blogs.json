@@ -1,7 +1,7 @@
 {
   "provider": "reviewtrackers",
   "blogURL": "https://www.reviewtrackers.com/blog/",
-  "fetched": "2026-06-14T20:42:17Z",
+  "fetched": "2026-06-27T12:03:07Z",
   "posts": [
     {
       "title": "Automotive Reputation Management: Winning with Digital Strategies",
@@ -148,8 +148,18 @@
   "repo": "reviewtrackers",
   "feeds": [
     {
+      "source": "https://www.reviewtrackers.com/feed/",
+      "feed_url": "https://www.reviewtrackers.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
       "source": "https://www.linkedin.com/company/review-trackers",
-      "error": "HTTPError"
+      "feed_url": "https://www.linkedin.com/company/review-trackers",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
   "post_count": 0
