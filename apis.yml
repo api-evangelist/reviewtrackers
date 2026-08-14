@@ -17,7 +17,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/reviewtrackers.png
 url: https://raw.githubusercontent.com/api-evangelist/reviewtrackers/refs/heads/main/apis.yml
 created: '2026-06-13'
-modified: '2026-06-13'
+modified: '2026-08-13'
 specificationVersion: '0.19'
 tags:
   - Reputation Management
@@ -26,13 +26,17 @@ tags:
   - Sentiment Analytics
   - Local SEO
   - Online Reviews
+  - Multi-Location
+  - Customer Experience
+  - Review Response
+  - Local Listings
 
 apis:
   - aid: reviewtrackers:reviewtrackers-api
     name: ReviewTrackers API
     description: REST API for the ReviewTrackers online reputation management platform. Provides access to review data from 100+ review sites, enables automated review responses, supports review solicitation campaigns, and delivers sentiment and experience analytics. Used to integrate ReviewTrackers data with CRMs, POS systems, and custom applications.
     humanURL: https://www.reviewtrackers.com/blog/api-integrations/
-    baseURL: https://app.reviewtrackers.com
+    baseURL: https://api.reviewtrackers.com
     tags:
       - Reviews
       - Reputation Management
@@ -51,14 +55,14 @@ common:
     url: https://www.reviewtrackers.com
   - type: Documentation
     url: https://www.reviewtrackers.com/blog/api-integrations/
-  - type: GitHubOrg
+  - type: GitHubOrganization
     url: https://github.com/reviewtrackers
   - type: LinkedIn
     url: https://www.linkedin.com/company/review-trackers
   - type: Blog
     url: https://www.reviewtrackers.com/blog/
   - type: Pricing
-    url: https://www.reviewtrackers.com/pricing/
+    url: https://www.reviewtrackers.com/plans/
   - type: StatusPage
     url: https://status.reviewtrackers.com
   - type: X
@@ -70,6 +74,47 @@ common:
   - type: FinOps
     url: finops/reviewtrackers-finops.yml
 
+  - type: DeveloperPortal
+    url: https://developer.reviewtrackers.com/
+  - type: Support
+    url: https://support.reviewtrackers.com/hc/en-us
+  - type: Login
+    url: https://app.reviewtrackers.com
+  - type: TermsOfService
+    url: https://www.reviewtrackers.com/terms-service/
+  - type: PrivacyPolicy
+    url: https://www.reviewtrackers.com/terms-service/privacy-policy/
+  - type: Security
+    url: https://www.reviewtrackers.com/bug-bounty/
+  - type: Compliance
+    url: https://www.reviewtrackers.com/terms-service/security/
+  - type: Authentication
+    url: authentication/reviewtrackers-authentication.yml
+  - type: Conventions
+    url: conventions/reviewtrackers-conventions.yml
+  - type: ErrorCatalog
+    url: errors/reviewtrackers-problem-types.yml
+  - type: DataModel
+    url: data-model/reviewtrackers-data-model.yml
+  - type: Lifecycle
+    url: lifecycle/reviewtrackers-lifecycle.yml
+  - type: Conformance
+    url: conformance/reviewtrackers-conformance.yml
+  - type: VulnerabilityDisclosure
+    url: security/reviewtrackers-vulnerability-disclosure.yml
+  - type: Webhooks
+    url: asyncapi/reviewtrackers-webhooks.yml
+  - type: ChangeLog
+    url: changelog/reviewtrackers-changelog.yml
+  - type: LLMsTxt
+    url: llms/reviewtrackers-llms.txt
+
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+
+x-enrichment:
+  date: '2026-08-13'
+  status: enriched
+  artifacts_added: 13
+  pass: local-v1
