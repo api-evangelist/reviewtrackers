@@ -1,0 +1,112 @@
+generated: '2026-08-13'
+method: probed
+source: >-
+  Live unauthenticated requests to https://api.reviewtrackers.com/ on 2026-08-13,
+  cross-referenced with rate-limits/reviewtrackers-rate-limits.yml
+name: ReviewTrackers API Conventions
+description: >-
+  Cross-cutting request/response semantics for the ReviewTrackers REST API,
+  established by probing the live production host. ReviewTrackers publishes no
+  OpenAPI document and its developer portal is credential-gated, so everything
+  recorded here was observed on the wire or is explicitly marked unknown.
+media_types:
+  style: vendored HAL+JSON
+  hypermedia: HAL (Hypertext Application Language)
+  pattern: application/vnd.rtx.<resource>.<version>.hal+json;charset=utf-8
+  observed:
+    - application/hal+json;charset=utf-8
+    - application/vnd.rtx.account.v2.hal+json;charset=utf-8
+    - application/vnd.rtx.review.v2.hal+json;charset=utf-8
+    - application/vnd.rtx.location.v2.hal+json;charset=utf-8
+    - application/vnd.rtx.user.v2.hal+json;charset=utf-8
+    - application/vnd.rtx.auth.v2.hal+json;charset=utf-8
+  note: >-
+    The response media type is resource-aware — each collection answers on its own
+    vendored type even on an error — which makes the media type, not a body field,
+    the strongest machine signal about what was addressed.
+versioning:
+  scheme: media-type
+  current: v2
+  in_path: false
+  description: >-
+    The API version travels inside the vendored media type (…v2.hal+json), not in
+    the URI path. Requesting a /v2/ path prefix is accepted but shifts the vendor
+    token rather than the version (GET /v2/reviews answered
+    application/vnd.rtx-v2.review.v2.hal+json), so the path prefix is not the
+    version selector.
+  evidence:
+    - request: GET https://api.reviewtrackers.com/reviews
+      content_type: application/vnd.rtx.review.v2.hal+json;charset=utf-8
+    - request: GET https://api.reviewtrackers.com/v2/reviews
+      content_type: application/vnd.rtx-v2.review.v2.hal+json;charset=utf-8
+authentication:
+  style: http-basic
+  realm: rtx:production
+  detail: authentication/reviewtrackers-authentication.yml
+tenancy:
+  parameter: account_id
+  location: query
+  required: true
+  description: >-
+    Account-scoped collections reject a request without account_id BEFORE
+    evaluating credentials. Every data resource is namespaced to an account, which
+    makes account_id the root of the data model.
+  evidence:
+    - request: GET https://api.reviewtrackers.com/reviews
+      status: 400
+      body: '{"status":400,"error":"Missing Required Param: account_id"}'
+pagination:
+  style: page-based
+  max_page_size: 100
+  params_observed: []
+  note: >-
+    A maximum of 100 results per page is documented (see
+    rate-limits/reviewtrackers-rate-limits.yml). The parameter names and the
+    response envelope fields could not be observed anonymously because every
+    collection is authentication-gated past the account_id check. HAL convention
+    would place navigation under _links (next/prev/self) but this was NOT verified.
+  verified: false
+idempotency:
+  supported: unknown
+  header: null
+  description: >-
+    No idempotency-key header, parameter or documented replay contract was found.
+    No Idempotency pointer is emitted in apis.yml — asserting one would credit
+    ReviewTrackers with a guarantee it does not publish.
+error_envelope:
+  format: vendor-json
+  rfc9457: false
+  fields: [status, error]
+  detail: errors/reviewtrackers-problem-types.yml
+rate_limiting:
+  documented: true
+  response_headers_observed: []
+  note: >-
+    No X-RateLimit-*, RateLimit-* or Retry-After header was present on any observed
+    anonymous 200/400/401/404/415 response. Published limits are recorded in
+    rate-limits/reviewtrackers-rate-limits.yml but the runtime signalling headers
+    could not be confirmed.
+  detail: rate-limits/reviewtrackers-rate-limits.yml
+request_tracing:
+  provider_header: null
+  note: >-
+    No first-party request-id header is returned. Responses carry CloudFront edge
+    headers (x-amz-cf-id, x-amz-cf-pop, via, x-cache) which identify the edge
+    request, not an application trace.
+security_headers:
+  observed:
+    - x-content-type-options: nosniff
+    - x-frame-options: deny
+    - strict-transport-security (on app. and www. hosts)
+  note: >-
+    HSTS is present on www.reviewtrackers.com and app.reviewtrackers.com but was
+    NOT observed on api.reviewtrackers.com responses.
+infrastructure:
+  edge: Amazon CloudFront
+  evidence: 'via: 1.1 <id>.cloudfront.net (CloudFront) on every api.reviewtrackers.com response'
+cross_links:
+  authentication: authentication/reviewtrackers-authentication.yml
+  errors: errors/reviewtrackers-problem-types.yml
+  lifecycle: lifecycle/reviewtrackers-lifecycle.yml
+  rate_limits: rate-limits/reviewtrackers-rate-limits.yml
+  data_model: data-model/reviewtrackers-data-model.yml

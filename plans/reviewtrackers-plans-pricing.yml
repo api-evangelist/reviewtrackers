@@ -1,6 +1,10 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.reviewtrackers.com/plans/
+plan_count: 3
 name: ReviewTrackers Plans and Pricing
 description: Pricing plans for ReviewTrackers online reputation management platform. Pricing is location-based (per location per month, billed annually) with a custom quote model. API access is included on higher tiers.
-url: https://www.reviewtrackers.com/pricing/
+url: https://www.reviewtrackers.com/plans/
 plans:
   - name: Data Only
     description: Review data from 100+ sources combined with additional signals for analysis in your preferred platform. Your data, your way.
@@ -52,4 +56,6 @@ notes:
   - Pricing is not publicly listed; a custom quote is required based on number of locations.
   - Starting price is approximately $69 per location per month (billed annually).
   - Enterprise pricing available for 100+ location businesses.
-  - ReviewTrackers is owned by Press Ganey.
+  - ReviewTrackers was acquired by InMoment in June 2022; InMoment is now a Press Ganey Forsta company.
+  - No plan on the public pricing page lists a numeric price, a quota or an overage rate; all three tiers are quote-only, so price/currency/quota/overage fields are recorded as absent rather than guessed.
+  - Verified 2026-08-13: https://www.reviewtrackers.com/plans/ returns HTTP 200 (https://www.reviewtrackers.com/pricing/ also 200 and redirects to the same content).

@@ -1,0 +1,47 @@
+generated: '2026-08-13'
+method: probed
+source: >-
+  GET https://api.reviewtrackers.com/webhooks on 2026-08-13 —
+  HTTP 400 {"status":400,"error":"Missing Required Param: account_id"}
+name: ReviewTrackers Webhook Surface
+description: >-
+  ReviewTrackers exposes an outbound webhook subscription resource on its
+  production REST API. This artifact records the surface that was confirmed by
+  live probe. It is NOT an AsyncAPI document — ReviewTrackers publishes no
+  AsyncAPI specification and no public event catalog, and none is fabricated here.
+spec_type: null
+asyncapi_published: false
+webhooks:
+  management_endpoint: https://api.reviewtrackers.com/webhooks
+  confirmed: true
+  confirmation_method: >-
+    The path is routed. An anonymous GET returns 400 "Missing Required Param:
+    account_id", whereas an unrouted path on the same host returns 404 "Endpoint
+    Not Found" (verified against /surveys, /exports, /me and others). The 400 is
+    therefore positive evidence that a webhooks resource exists.
+  scope: account
+  required_params:
+    - name: account_id
+      in: query
+      required: true
+  transport: https
+  subscription_model: api-managed
+  description: >-
+    Webhook subscriptions are created and listed through the API itself, scoped to
+    an account, rather than configured only in the web application.
+events:
+  documented: false
+  catalog: []
+  note: >-
+    The event type catalog, payload schemas, signing/verification scheme, retry
+    policy and delivery guarantees are documented only inside
+    https://developer.reviewtrackers.com/, which returns HTTP 401 with
+    WWW-Authenticate Basic realm="Restricted Area" to every anonymous request.
+    They are deliberately left empty rather than guessed.
+gaps_for_provider:
+  - Publish the webhook event type catalog outside the credential-gated portal.
+  - Publish payload schemas and the signature verification scheme.
+  - Publish an AsyncAPI 3.x document describing the event surface.
+cross_links:
+  data_model: data-model/reviewtrackers-data-model.yml
+  authentication: authentication/reviewtrackers-authentication.yml

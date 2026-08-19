@@ -1,0 +1,88 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.reviewtrackers.com/blog/solutions/product-updates/feed/
+name: ReviewTrackers Product Updates
+description: >-
+  ReviewTrackers publishes a dated Product Updates archive with an RSS feed. IT IS
+  A PRODUCT changelog, not an API changelog — entries announce platform features
+  and partner integrations, and none of them records an API version change, a
+  breaking change, or an endpoint addition or removal. API-level release notes, if
+  they exist, live inside the credential-gated developer portal.
+scope: product
+api_changelog_published: false
+url: https://www.reviewtrackers.com/blog/solutions/product-updates/
+feed: https://www.reviewtrackers.com/blog/solutions/product-updates/feed/
+format: rss
+versioning_scheme: media-type
+current_version: v2
+entries:
+  - date: '2023-11-01'
+    title: How Customer Experience Analysis Improves Customer Retention and Drives Business Growth
+    url: https://www.reviewtrackers.com/blog/reviewtrackers-experience-analytics/
+    kind: feature
+    breaking: false
+  - date: '2023-10-17'
+    title: Improve Local Business SEO with ReviewTrackers' Local Listings
+    url: https://www.reviewtrackers.com/blog/improve-local-business-seo/
+    kind: feature
+    breaking: false
+  - date: '2023-10-03'
+    title: ReviewTrackers Integrates with Apple Business Connect to Enhance Customers' Listings Accuracy and Consistency
+    url: https://www.reviewtrackers.com/blog/apple-business-connect/
+    kind: integration
+    breaking: false
+  - date: '2023-08-18'
+    title: 'AI Review Response: Can Artificial Intelligence Respond to Your Reviews?'
+    url: https://www.reviewtrackers.com/blog/ai-review-response/
+    kind: feature
+    breaking: false
+  - date: '2023-04-14'
+    title: Recipient Details by ReviewTrackers Unlocks Powerful Customer Insights for Brands
+    url: https://www.reviewtrackers.com/blog/recipient-details/
+    kind: feature
+    breaking: false
+  - date: '2023-03-31'
+    title: 'Performance Score: Benchmark Your Brand and Business Location Performance'
+    url: https://www.reviewtrackers.com/blog/performance-score/
+    kind: feature
+    breaking: false
+  - date: '2023-02-15'
+    title: ReviewTrackers Announces Its Integration With InMoment's XI Platform
+    url: https://www.reviewtrackers.com/blog/inmoment-reviewtrackers-integration/
+    kind: integration
+    breaking: false
+  - date: '2022-09-16'
+    title: Get More Reviews with ReviewTrackers' Ask Tool
+    url: https://www.reviewtrackers.com/blog/ask-tool/
+    kind: feature
+    breaking: false
+  - date: '2022-07-15'
+    title: Foster Consumer Trust with Review Alerts and Immediate Keyword Alerts
+    url: https://www.reviewtrackers.com/blog/keyword-alerts/
+    kind: feature
+    breaking: false
+  - date: '2022-07-12'
+    title: Showcase Your Reviews with Amplify by ReviewTrackers
+    url: https://www.reviewtrackers.com/blog/amplify/
+    kind: feature
+    breaking: false
+  - date: '2022-06-16'
+    title: ReviewTrackers Acquired by Experience Improvement Leader InMoment
+    url: https://www.reviewtrackers.com/blog/reviewtrackers-acquired-by-inmoment/
+    kind: company
+    breaking: false
+  - date: '2022-03-16'
+    title: Get More Work Done with the ReviewTrackers API and Integrations
+    url: https://www.reviewtrackers.com/blog/api-integrations/
+    kind: api
+    breaking: false
+    note: The only API-related entry in the archive; it is a capability overview, not a release note.
+staleness:
+  latest_entry: '2023-11-01'
+  note: >-
+    The Product Updates feed has published nothing since November 2023 — a gap of
+    over two and a half years as of this pass. Recorded as observed; the feed and
+    archive both remain live and return HTTP 200.
+gaps_for_provider:
+  - Publish dated API release notes outside the credential-gated developer portal.
+  - Record breaking-change and deprecation events against the v2 media type.

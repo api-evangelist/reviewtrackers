@@ -1,0 +1,42 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  npm registry search, PyPI JSON API, RubyGems search API, Packagist search API,
+  crates.io API, and the github.com/reviewtrackers organization repository listing
+name: ReviewTrackers Client Libraries
+description: >-
+  Registry sweep for first-party ReviewTrackers client libraries. No official SDK
+  was found in any public package registry, and the company GitHub organization
+  publishes no API client. Integrators call the REST API directly over HTTP Basic.
+package_count: 0
+official_package_count: 0
+packages: []
+registries_searched:
+  - registry: npm
+    endpoint: https://registry.npmjs.org/-/v1/search?text=reviewtrackers
+    result: no matching packages
+  - registry: pypi
+    endpoint: https://pypi.org/pypi/reviewtrackers/json
+    result: 404 (also 404 for review-trackers)
+  - registry: rubygems
+    endpoint: https://rubygems.org/api/v1/search.json?query=reviewtrackers
+    result: empty array
+  - registry: packagist
+    endpoint: https://packagist.org/search.json?q=reviewtrackers
+    result: 0 results
+  - registry: crates.io
+    endpoint: https://crates.io/api/v1/crates?q=reviewtrackers
+    result: 0 results
+  - registry: github
+    endpoint: https://api.github.com/orgs/reviewtrackers/repos
+    result: >-
+      Organization exists (id 10710977) with 12 public repositories, all forks of
+      third-party infrastructure tooling (migrate, kiam, docker-openvpn,
+      terraform-kubernetes-addons, heroku buildpacks) plus one internal Ruby
+      utility (factory_bro). None is a ReviewTrackers API client library.
+notes:
+  - No SDKs pointer is emitted in apis.yml — there is no official client library to point at.
+  - >-
+    Community code exists (e.g. github.com/therin/reviewtrackers, a PHP script that
+    POSTs Basic credentials to https://api.reviewtrackers.com/auth) but it is
+    third-party and unmaintained, so it is not recorded as a package.

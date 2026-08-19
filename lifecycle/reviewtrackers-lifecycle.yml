@@ -1,0 +1,71 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  https://status.reviewtrackers.com/api/v2/status.json,
+  https://www.reviewtrackers.com/terms-service/security/, and live probes of
+  https://api.reviewtrackers.com/ on 2026-08-13
+name: ReviewTrackers API Lifecycle
+description: >-
+  Versioning, deprecation, availability and support posture for the ReviewTrackers
+  REST API. Versioning was established by probe; the status page was verified live
+  through the Statuspage API. No deprecation policy is published — recorded as an
+  absence rather than assumed.
+versioning:
+  scheme: media-type
+  current: v2
+  docs: https://developer.reviewtrackers.com/
+  docs_access: gated
+  description: >-
+    The API version is carried in the vendored response media type
+    (application/vnd.rtx.<resource>.v2.hal+json), not in the URI path. See
+    conventions/reviewtrackers-conventions.yml for the probe evidence.
+deprecation:
+  policy_url: null
+  policy_published: false
+  sunset_header: false
+  deprecation_header: false
+  note: >-
+    No deprecation or version-retirement policy is published on any public page,
+    and no Sunset or Deprecation response header was observed on any probed
+    endpoint. No Deprecation pointer is emitted in apis.yml.
+deprecated_operations: []
+status_page:
+  url: https://status.reviewtrackers.com
+  platform: Atlassian Statuspage
+  page_id: w5mwz1hzx8c6
+  machine_readable: https://status.reviewtrackers.com/api/v2/status.json
+  subscribe: true
+  verified:
+    fetched: '2026-08-13'
+    http_status: 200
+    indicator: none
+    description: All Systems Operational
+sla:
+  url: null
+  uptime_target: null
+  note: >-
+    ReviewTrackers states that a Service Level Agreement is included inside its
+    Master Services Agreement, available to customers. No public uptime target is
+    published.
+  source: https://www.reviewtrackers.com/terms-service/security/
+support:
+  help_center: https://support.reviewtrackers.com/hc/en-us
+  ticket: https://support.reviewtrackers.com/hc/en-us/requests/new
+  note: >-
+    The Zendesk help center returns HTTP 403 to automated clients; it is reachable
+    in a browser.
+  api_credentials: >-
+    Issued by a customer success representative. The API root itself returns
+    {"message":"Contact your CS representative or reference https://developer.reviewtrackers.com/"}
+ownership:
+  parent: InMoment
+  ultimate_parent: Press Ganey Forsta
+  acquired: '2022-06-16'
+  source: https://www.reviewtrackers.com/blog/reviewtrackers-acquired-by-inmoment/
+  note: >-
+    ReviewTrackers was acquired by InMoment in June 2022; InMoment is now a Press
+    Ganey Forsta company. The product continues to ship under its own brand, its own
+    domain and its own API host.
+cross_links:
+  changelog: changelog/reviewtrackers-changelog.yml
+  conventions: conventions/reviewtrackers-conventions.yml

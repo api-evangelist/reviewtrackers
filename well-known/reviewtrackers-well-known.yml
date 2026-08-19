@@ -1,0 +1,116 @@
+generated: '2026-08-13'
+method: probed
+source: live GET of /.well-known/* on every ReviewTrackers host
+name: ReviewTrackers Well-Known Discovery Probe
+description: >-
+  Probe of the RFC 8615 /.well-known/ discovery surface across every host
+  ReviewTrackers operates. No well-known document was served by any host. This
+  file records an ABSENCE — no WellKnown, SecurityTxt, APICatalog or AgentCard
+  pointer is emitted in apis.yml because no path returned a real document.
+result: none
+hosts:
+  - host: https://api.reviewtrackers.com
+    note: The production REST API host. Returns application/json 404 bodies for every well-known path.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://app.reviewtrackers.com
+    note: >-
+      SOFT 200 — the web application is a single-page app whose catch-all route
+      answers HTTP 200 with text/html (Content-Type text/html; charset=utf-8,
+      ~90KB New Relic-instrumented HTML shell) for EVERY /.well-known/ path,
+      including paths that cannot exist. These are NOT documents and are treated
+      as misses.
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        content_type: text/html
+        document: false
+      - path: /.well-known/openid-configuration
+        status: 200
+        content_type: text/html
+        document: false
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        content_type: text/html
+        document: false
+      - path: /.well-known/oauth-protected-resource
+        status: 200
+        content_type: text/html
+        document: false
+      - path: /.well-known/api-catalog
+        status: 200
+        content_type: text/html
+        document: false
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        content_type: text/html
+        document: false
+      - path: /.well-known/agent-card.json
+        status: 200
+        content_type: text/html
+        document: false
+      - path: /.well-known/agent.json
+        status: 200
+        content_type: text/html
+        document: false
+  - host: https://www.reviewtrackers.com
+    note: Marketing site (WordPress). Clean 404 on every path.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://developer.reviewtrackers.com
+    note: >-
+      The developer portal named by the API root response. Every path — including
+      the site root — returns 401 with WWW-Authenticate Basic realm="Restricted
+      Area". The whole portal is credential-gated, so no well-known probe can
+      complete against it.
+    documents:
+      - path: /.well-known/security.txt
+        status: 401
+      - path: /.well-known/openid-configuration
+        status: 401
+      - path: /.well-known/oauth-authorization-server
+        status: 401
+      - path: /.well-known/oauth-protected-resource
+        status: 401
+      - path: /.well-known/api-catalog
+        status: 401
+      - path: /.well-known/ai-plugin.json
+        status: 401
+      - path: /.well-known/agent-card.json
+        status: 401
+      - path: /.well-known/agent.json
+        status: 401
+notes:
+  - No security.txt is served, but ReviewTrackers DOES publish a vulnerability
+    disclosure policy as an HTML page - see security/reviewtrackers-vulnerability-disclosure.yml.
+  - No A2A agent card exists at either the canonical or legacy path on any host.

@@ -1,6 +1,10 @@
+generated: '2026-08-13'
+method: searched
+source: https://developer.reviewtrackers.com/
+limit_count: 2
 name: ReviewTrackers API Rate Limits
 description: Rate limiting policies for the ReviewTrackers REST API. Limits apply per API key and are enforced server-side. ReviewTrackers reserves the right to throttle calls based on CPU time and total response time.
-url: https://www.reviewtrackers.com/blog/api-integrations/
+url: https://developer.reviewtrackers.com/
 
 limits:
   - endpoint: POST /auth
@@ -26,4 +30,27 @@ notes:
   - Rate limits apply per API key / access token.
   - Exceeding rate limits will result in HTTP 429 Too Many Requests responses.
   - Contact ReviewTrackers support for elevated rate limits for enterprise integrations.
-  - Rate limit headers are returned in API responses to help clients manage their request pace.
+  - >-
+    CORRECTED 2026-08-13: no X-RateLimit-*, RateLimit-* or Retry-After response
+    header was observed on any live anonymous response from
+    https://api.reviewtrackers.com (200 root, 400 /reviews, 401 /accounts, 404
+    unrouted, 415 /auth). An earlier note in this file claimed rate limit headers
+    are returned; that claim could not be confirmed and is withdrawn. Headers may
+    still be present on authenticated responses, which were not exercised.
+
+x-verification:
+  checked: '2026-08-13'
+  status_code_on_exhaustion:
+    documented: 429
+    observed: false
+    note: Probing to exhaustion was not attempted.
+  response_headers_observed: []
+  source_readable: false
+  source_status: 401
+  note: >-
+    The numeric limits below were harvested in an earlier pass. They could not be
+    re-verified in this pass because the ReviewTrackers developer reference at
+    https://developer.reviewtrackers.com/ returns HTTP 401 with
+    WWW-Authenticate Basic realm="Restricted Area" to every anonymous request, and
+    no Wayback Machine snapshot of that host exists. They are retained and flagged
+    rather than deleted or restated as verified.

@@ -1,0 +1,133 @@
+generated: '2026-08-13'
+method: probed
+source: >-
+  Endpoint enumeration against https://api.reviewtrackers.com/ on 2026-08-13.
+  ReviewTrackers publishes no OpenAPI document, so the entity graph below is
+  derived from which paths the API routes and which parameters it demands — not
+  from a schema.
+name: ReviewTrackers API Data Model
+description: >-
+  Entity inventory for the ReviewTrackers REST API. Every entity listed was
+  confirmed to exist by a live probe: a routed path answers 400 (missing
+  account_id) or 401 (must be authenticated), while an unrouted path answers 404
+  with {"status":404,"error":"Endpoint Not Found"}. That 404 negative control is
+  what makes this inventory evidence rather than a guess. FIELD-LEVEL SCHEMAS ARE
+  NOT INCLUDED — they sit behind authentication and the credential-gated developer
+  portal, and are not invented here.
+root_entity: account
+entities:
+  - name: account
+    path: /accounts
+    confirmed_by: 401 Must Be Authenticated. (WWW-Authenticate Basic realm="rtx:production")
+    media_type: application/vnd.rtx.account.v2.hal+json
+    description: The customer organization. Root of every other resource in the API.
+  - name: location
+    path: /locations
+    confirmed_by: 401 Must Be Authenticated.
+    media_type: application/vnd.rtx.location.v2.hal+json
+    description: >-
+      A physical or logical business location. The commercial unit ReviewTrackers
+      bills on (per location per month) and the unit reviews attach to.
+  - name: review
+    path: /reviews
+    confirmed_by: "400 Missing Required Param: account_id"
+    media_type: application/vnd.rtx.review.v2.hal+json
+    description: A customer review harvested from one of 100+ monitored review sites.
+  - name: response
+    path: /responses
+    confirmed_by: 401 Must Be Authenticated.
+    description: A published reply to a review.
+  - name: user
+    path: /users
+    confirmed_by: 401 Must Be Authenticated.
+    media_type: application/vnd.rtx.user.v2.hal+json
+    description: A ReviewTrackers platform user within an account.
+  - name: source
+    path: /sources
+    confirmed_by: 401 Must Be Authenticated.
+    description: A monitored review site / data source (Google, Yelp, Facebook, app stores, etc.).
+  - name: campaign
+    path: /campaigns
+    confirmed_by: 401 Must Be Authenticated.
+    description: A review-solicitation / feedback-request campaign.
+  - name: tag
+    path: /tags
+    confirmed_by: "400 Missing Required Param: account_id"
+    description: A label applied to reviews for categorization and reporting.
+  - name: alert
+    path: /alerts
+    confirmed_by: 401 Must Be Authenticated.
+    description: A configured notification rule (email/SMS) on incoming review activity.
+  - name: webhook
+    path: /webhooks
+    confirmed_by: "400 Missing Required Param: account_id"
+    description: >-
+      An outbound HTTP callback subscription. See
+      asyncapi/reviewtrackers-webhooks.yml for the event surface.
+relationships:
+  - from: review
+    to: account
+    type: belongs_to
+    via: account_id
+    evidence: GET /reviews without account_id returns 400 Missing Required Param
+  - from: tag
+    to: account
+    type: belongs_to
+    via: account_id
+    evidence: GET /tags without account_id returns 400 Missing Required Param
+  - from: webhook
+    to: account
+    type: belongs_to
+    via: account_id
+    evidence: GET /webhooks without account_id returns 400 Missing Required Param
+  - from: account
+    to: location
+    type: has_many
+    via: account_id
+    confidence: medium
+    note: Inferred from the account-scoped tenancy model and the per-location commercial model; not directly observed.
+  - from: account
+    to: user
+    type: has_many
+    via: account_id
+    confidence: medium
+  - from: location
+    to: review
+    type: has_many
+    confidence: medium
+    note: Reviews are attributed to a location in the product UI; the API field name was not observed.
+  - from: review
+    to: response
+    type: has_one
+    confidence: medium
+  - from: review
+    to: source
+    type: belongs_to
+    confidence: medium
+absent_from_api:
+  description: >-
+    Probed and returned 404 Endpoint Not Found — these product concepts are NOT
+    exposed as REST resources at the API root.
+  paths:
+    - /surveys
+    - /competitors
+    - /keywords
+    - /subscriptions
+    - /exports
+    - /reports
+    - /invitations
+    - /feedback
+    - /listings
+    - /sentiment
+    - /analytics
+    - /credentials
+    - /me
+    - /health
+    - /schema
+    - /discover
+notes:
+  - >-
+    Confidence is high on entity EXISTENCE (each is a live routed path) and medium
+    on the relationship edges, which are inferred from the account_id tenancy rule
+    and the product model rather than read from a schema.
+  - Field names, id formats and id prefixes are unknown and are deliberately not guessed.

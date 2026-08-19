@@ -1,0 +1,43 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  Web search for a ReviewTrackers MCP server, npm registry search, the
+  github.com/reviewtrackers organization listing, and live probes of
+  https://api.reviewtrackers.com/ on 2026-08-13
+name: ReviewTrackers MCP Server
+description: >-
+  Search record for a ReviewTrackers Model Context Protocol server. None exists.
+  No hosted endpoint, no stdio package, and no candidate tool list could be
+  derived because ReviewTrackers publishes no OpenAPI document to derive one from.
+  This file records an ABSENCE — no MCPServer pointer is emitted in apis.yml.
+status: none
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+tools: []
+searched:
+  - target: npm registry (text search "reviewtrackers")
+    result: no packages
+  - target: github.com/reviewtrackers organization repositories
+    result: 12 public repos, all third-party infrastructure forks; no MCP server
+  - target: web search for "ReviewTrackers MCP server"
+    result: no first-party or community server found
+  - target: https://api.reviewtrackers.com/mcp
+    result: 404 Endpoint Not Found
+blockers:
+  - >-
+    No OpenAPI document exists for ReviewTrackers, so a candidate tool list cannot
+    be derived. The entities that would back tools are known (see
+    data-model/reviewtrackers-data-model.yml) but their parameters and payload
+    schemas are not public, and inventing an inputSchema would be fabrication.
+  - >-
+    The developer portal at https://developer.reviewtrackers.com/ returns HTTP 401
+    with a Basic challenge, so the operation contracts an MCP server would wrap are
+    not readable.
+notes:
+  - No endpoint URL is guessed. A guessed MCP path that happened to return 200 would read as a verified agent surface.
+  - No tool crosswalk artifact is emitted — a crosswalk requires both an MCP tool list and an OpenAPI, and neither exists.

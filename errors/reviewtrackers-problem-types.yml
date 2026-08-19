@@ -1,0 +1,89 @@
+generated: '2026-08-13'
+method: probed
+source: >-
+  Live unauthenticated requests to https://api.reviewtrackers.com/ on 2026-08-13.
+  ReviewTrackers publishes no OpenAPI document and no public error reference, so
+  this catalog is built from error responses actually observed on the wire.
+name: ReviewTrackers API Error Catalog
+description: >-
+  Error envelope and observed error conditions for the ReviewTrackers REST API.
+  The API does NOT use RFC 9457 problem+json; it returns a flat two-field JSON
+  envelope on the resource's own vendored HAL media type.
+format: vendor-json
+rfc9457: false
+envelope:
+  content_type_pattern: application/vnd.rtx.<resource>.v2.hal+json;charset=utf-8
+  fallback_content_type: application/json;charset=utf-8
+  fields:
+    - name: status
+      type: integer
+      description: The HTTP status code, repeated in the body.
+    - name: error
+      type: string
+      description: A human-readable message. Not a stable machine-readable code.
+  example: '{"error":"Must Be Authenticated.","status":401}'
+  notes:
+    - Field order is not stable across responses — 401 bodies emit "error" first, 400 and 404 bodies emit "status" first.
+    - There is no error `type` URI, no `detail`, no `instance`, and no application-level error code.
+problems:
+  - status: 400
+    error: 'Missing Required Param: account_id'
+    title: Required query parameter missing
+    description: >-
+      Account-scoped collections require an account_id query parameter. Returned
+      before authentication is evaluated, which is how the existence of these
+      endpoints can be confirmed anonymously.
+    observed_on:
+      - GET /reviews
+      - GET /tags
+      - GET /webhooks
+    remediation: Supply the account_id query parameter for the account whose data is being requested.
+  - status: 401
+    error: Must Be Authenticated.
+    title: Missing or invalid credentials
+    description: >-
+      Returned with WWW-Authenticate Basic realm="rtx:production" on every
+      protected resource and on POST /auth when no credentials are presented.
+    observed_on:
+      - GET /accounts
+      - GET /locations
+      - GET /users
+      - GET /responses
+      - GET /campaigns
+      - GET /sources
+      - GET /alerts
+      - POST /auth
+    remediation: Present HTTP Basic credentials issued by a ReviewTrackers customer success representative.
+  - status: 404
+    error: Endpoint Not Found
+    title: Unknown endpoint
+    description: >-
+      Returned on application/json (not a vendored HAL type) for any path the API
+      does not route. This is the negative control that makes the 400/401
+      responses above meaningful evidence of a real endpoint.
+    observed_on:
+      - GET /account
+      - GET /reports
+      - GET /me
+    remediation: Check the resource path against the developer portal reference.
+  - status: 415
+    title: Unsupported content type
+    description: >-
+      Returned by POST /auth when the request carries no Content-Type or a type
+      outside the accepted list. The response body enumerates every accepted media
+      type in plain text — see authentication/reviewtrackers-authentication.yml.
+    observed_on:
+      - POST /auth
+    remediation: Send Content-Type application/json or one of the vendored application/vnd.rtx.* HAL types.
+  - status: 429
+    title: Rate limit exceeded
+    description: >-
+      Documented behaviour on exhaustion (see rate-limits/reviewtrackers-rate-limits.yml).
+      NOT observed in this pass — probing to exhaustion was not attempted.
+    observed: false
+    remediation: Back off and retry; contact ReviewTrackers support for elevated limits.
+notes:
+  - >-
+    Derived entirely from probed live responses. When ReviewTrackers publishes a
+    machine-readable specification or opens its error reference, this file should be
+    upgraded to method:searched with the documented code list.
