@@ -64,32 +64,127 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-ReviewTrackers is an online reputation management platform that enables businesses to monitor reviews across 100+ review sites, respond to customer feedback, generate new reviews, and track sentiment analytics. The platform is owned by Press Ganey and serves businesses ranging from single-location SMBs to large enterprises with hundreds of locations.
+ReviewTrackers is an online reputation management platform that enables businesses to monitor reviews across 100+ review sites, respond to customer feedback, generate new reviews, and track sentiment analytics. The REST API allows organizations to download review data, sync with CRM and POS systems, automate review responses, and build custom applications on top of ReviewTrackers data.
 
-## API
+**Areas:** Reputation Management · Review Monitoring · Customer Feedback · Sentiment Analytics · Local SEO · Online Reviews · Multi-Location · Customer Experience · Review Response · Local Listings
 
-The ReviewTrackers REST API allows organizations to:
+## ReviewTrackers on APIs.io
 
-- Download review data from 100+ sources
-- Sync with CRM, POS, and reporting systems
-- Automate review responses
-- Run review solicitation campaigns
-- Access sentiment and experience analytics
-- Build custom applications on the platform
+Everything profiled for ReviewTrackers is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/reviewtrackers/](https://apis.io/providers/reviewtrackers/)** — or go straight to one of the APIs or properties below.
 
-API access is bundled into ReviewTrackers subscription plans (Data Only, Starter, Essential) rather than charged per call.
+### APIs (1)
 
-## Links
+- [ReviewTrackers API](https://apis.io/apis/reviewtrackers/reviewtrackers-api/) — REST API for the ReviewTrackers online reputation management platform. Provides access to review data from 100+ review sites, enables automated review…
 
-- **Website**: https://www.reviewtrackers.com
-- **API Overview**: https://www.reviewtrackers.com/blog/api-integrations/
-- **Pricing**: https://www.reviewtrackers.com/pricing/
-- **Status Page**: https://status.reviewtrackers.com
-- **GitHub**: https://github.com/reviewtrackers
-- **LinkedIn**: https://www.linkedin.com/company/review-trackers
-- **X (Twitter)**: https://twitter.com/reviewtrackers
-- **Blog**: https://www.reviewtrackers.com/blog/
+### Published properties
 
-## APIs.json
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-This repository contains an [APIs.json](apis.yml) profile for ReviewTrackers following the [APIs.json 0.19 specification](https://apisjson.org).
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Reviewtrackers Webhooks](https://apis.io/asyncapis/reviewtrackers/reviewtrackers-webhooks/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Reviewtrackers Context](https://apis.io/jsonld/reviewtrackers/reviewtrackers-context/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Reviewtrackers Authentication](https://apis.io/security/reviewtrackers/reviewtrackers-authentication/)
+- [Reviewtrackers Domain Security](https://apis.io/security/reviewtrackers/reviewtrackers-domain-security/)
+- [Reviewtrackers Vulnerability Disclosure](https://apis.io/security/reviewtrackers/reviewtrackers-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Reviewtrackers Plans Pricing](https://apis.io/plans/reviewtrackers/reviewtrackers-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Reviewtrackers Rate Limits](https://apis.io/rate-limits/reviewtrackers/reviewtrackers-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Reviewtrackers Finops](https://apis.io/finops/reviewtrackers/reviewtrackers-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.reviewtrackers.com)
+- [Documentation](https://www.reviewtrackers.com/blog/api-integrations/)
+- [Pricing](https://www.reviewtrackers.com/plans/)
+- [Support](https://support.reviewtrackers.com/hc/en-us)
+- [Blog](https://www.reviewtrackers.com/blog/)
+- [Security](https://www.reviewtrackers.com/bug-bounty/)
+- [Compliance](https://www.reviewtrackers.com/terms-service/security/)
+- [Terms of service](https://www.reviewtrackers.com/terms-service/)
+- [Privacy policy](https://www.reviewtrackers.com/terms-service/privacy-policy/)
+- [GitHub](https://github.com/reviewtrackers)
+- [Status](https://status.reviewtrackers.com)
+
+## API Evangelist rating
+
+**Kin Score 55.9** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 49.4 |
+| Contract governance | 18.2 |
+| Operational transparency | 73.7 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 77.6 |
+
+**Agent readiness 25.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/reviewtrackers/](https://apis.io/providers/reviewtrackers/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for ReviewTrackers: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/reviewtrackers/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
